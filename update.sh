@@ -27,7 +27,8 @@ then
         read -p "Do you want to upgrade? (y|n): " -n 1 -r
         if [[ $REPLY =~ ^[Yy]$ ]]
             then
-                echo "\\nUpgrading"
+                echo "   "
+                echo "Upgrading"
                 git pull origin main
                 sudo systemctl restart piPrinterCtrl.service
                 sudo systemctl restart tpcpilocal.service
