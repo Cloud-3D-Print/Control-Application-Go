@@ -5,8 +5,8 @@ SVCNAME=piPrinterCtrl
 SVCUSER=$USER  ### could be changed to another user with service permissions
 WORKDIR="$HOME/control/piPrinterCtrl"
 
-sudo systemctl disable ${SVCNAME} &>/dev/null || true
 sudo systemctl stop ${SVCNAME} &>/dev/null || true
+sudo systemctl disable ${SVCNAME} &>/dev/null || true
 sudo rm /etc/systemd/system/${SVCNAME}.service
 
 cat > ${SVCNAME}.service <<EOF
