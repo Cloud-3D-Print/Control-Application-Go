@@ -14,8 +14,9 @@ SVCUSER=$USER  ### could be changed to another user with service permissions
 if [ -d "/home/${SVCUSER}/control" ];
 then
     cd /home/${SVCUSER}/control
-    BRANCH=main
+    git fetch --all
 
+    BRANCH=main
     LOCAL=$(git log $BRANCH -n 1 --pretty=format:"%H")
     REMOTE=$(git log remotes/origin/$BRANCH -n 1 --pretty=format:"%H")
 
@@ -29,7 +30,7 @@ then
                 echo "Upgrading"
                 git pull origin main
                 sudo systemctl restart piPrinterCtrl.service
-                sudo systemctl restart piPrinterCtrl.tpcpilocal
+                sudo systemctl restart tpcpilocal.service
             else
                 exit 0
         fi
