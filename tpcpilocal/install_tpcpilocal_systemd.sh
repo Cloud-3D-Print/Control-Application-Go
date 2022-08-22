@@ -5,8 +5,8 @@ SVCNAME=tpcpilocal
 SVCUSER=$USER   ### could be changed to another user with service permissions
 WORKDIR="$HOME/control/tpcpilocal"
 
-sudo systemctl stop ${SVCNAME} &>/dev/null || true
-sudo systemctl disable ${SVCNAME} &>/dev/null || true
+sudo systemctl stop ${SVCNAME} >> /dev/null 2>&1
+sudo systemctl disable ${SVCNAME} >> /dev/null 2>&1
 sudo rm /etc/systemd/system/${SVCNAME}.service
 
 cat > ./${SVCNAME}.service <<EOF
@@ -33,8 +33,8 @@ EOF
 
 sudo cp ./${SVCNAME}.service /etc/systemd/system/
 
-sudo systemctl start ${SVCNAME} &>/dev/null || true
-sudo systemctl enable ${SVCNAME} &>/dev/null || true
+sudo systemctl start ${SVCNAME} >> /dev/null 2>&1
+sudo systemctl enable ${SVCNAME} >> /dev/null 2>&1
 
 sudo systemctl status ${SVCNAME}
 echo -e "You could use the following command to monitor the server:\njournalctl -n 100 -f -u ${SVCNAME}"
