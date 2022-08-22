@@ -1,9 +1,6 @@
 #!/usr/bin/bash
 set -e
 
-echo "Getting updates"
-sudo apt-get update
-
 SVCNAME=tpcpilocal
 SVCUSER=$USER   ### could be changed to another user with service permissions
 WORKDIR="$HOME/control/tpcpilocal"
