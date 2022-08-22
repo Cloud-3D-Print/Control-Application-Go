@@ -13,6 +13,7 @@ SVCUSER=$USER  ### could be changed to another user with service permissions
 
 if [ -d "/home/${SVCUSER}/control" ];
 then
+    cd /home/${SVCUSER}/control
     BRANCH=main
 
     LOCAL=$(git log $BRANCH -n 1 --pretty=format:"%H")
@@ -26,7 +27,6 @@ then
         if [[ $REPLY =~ ^[Yy]$ ]]
             then
                 echo "Upgrading"
-                cd /home/${SVCUSER}/control
                 git pull origin main
                 sudo systemctl restart piPrinterCtrl.service
                 sudo systemctl restart piPrinterCtrl.tpcpilocal
