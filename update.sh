@@ -20,9 +20,9 @@ then
     REMOTE=$(git log remotes/origin/$BRANCH -n 1 --pretty=format:"%H")
 
     if [ $LOCAL = $REMOTE ]; then
-        echo "Up-to-date"
+        echo "This Controller Application is up-to-date"
     else
-        echo "Need update"
+        echo "This Controller Application needs to be updated"
         read -p "Do you want to upgrade? (y|n)" -n 1 -r
         if [[ $REPLY =~ ^[Yy]$ ]]
             then
