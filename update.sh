@@ -14,7 +14,7 @@ SVCUSER=$USER  ### could be changed to another user with service permissions
 if [ -d "/home/${SVCUSER}/control" ];
 then
     cd /home/${SVCUSER}/control
-    git fetch --all
+    git fetch
 
     BRANCH=main
     LOCAL=$(git log $BRANCH -n 1 --pretty=format:"%H")
