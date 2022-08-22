@@ -24,10 +24,10 @@ then
         echo "This Controller Application is up-to-date"
     else
         echo "This Controller Application needs to be updated"
-        read -p "Do you want to upgrade? (y|n)" -n 1 -r
+        read -p "Do you want to upgrade? (y|n): " -n 1 -r
         if [[ $REPLY =~ ^[Yy]$ ]]
             then
-                echo "Upgrading"
+                echo "\nUpgrading"
                 git pull origin main
                 sudo systemctl restart piPrinterCtrl.service
                 sudo systemctl restart tpcpilocal.service
