@@ -3,4 +3,4 @@ resolution: 720P
 gpuJPEGQualityRank: 8    ### 1~10
 localVidHttpPort: 9988
 gRPCPortForPrinterControler: 19988
-iNotifyConfFile: /home/pi/control/AI_Config.json
+iNotifyConfFile: /home/$USER/control/AI_Config.json
