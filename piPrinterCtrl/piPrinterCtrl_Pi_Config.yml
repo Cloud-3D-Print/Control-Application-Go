@@ -1,6 +1,0 @@
-forPiPort: 1118
-rmtPrinterCtrlAddr: tx-video.cloud3dprint.com
-gRPCPortForPrinterControler: 19988
-iNotifyConfFile: /home/$USER/control/AI_Config.json
-gcodePath: ./gcode/
-printerCategory: marlin

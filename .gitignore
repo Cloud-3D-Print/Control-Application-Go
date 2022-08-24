@@ -1,2 +1,6 @@
 piPrinterCtrl/gcode/
 AI_Config.json
+piPrinterCtrl/*.service
+tpcpilocal/*.service
+piPrinterCtrl/*.yml
+tpcpilocal/*.yml
