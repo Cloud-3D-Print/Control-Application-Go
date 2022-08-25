@@ -1,4 +1,3 @@
-piPrinterCtrl/gcode/
 AI_Config.json
 piPrinterCtrl/*.service
 tpcpilocal/*.service
