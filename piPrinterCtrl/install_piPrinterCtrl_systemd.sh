@@ -39,12 +39,12 @@ sudo systemctl enable ${SVCNAME} &>/dev/null || true
 sudo systemctl status ${SVCNAME}
 echo -e "You could use the following command to monitor the server:\njournalctl -n 100 -f -u ${SVCNAME}"
 
-touch /home/${SVCUSER}/control/piPrinterCtrl_Pi_Config.yml
-cat <<EOF > /home/${SVCUSER}/control/piPrinterCtrl_Pi_Config.yml
-    forPiPort: 1118
-    rmtPrinterCtrlAddr: tx-video.cloud3dprint.com
-    gRPCPortForPrinterControler: 19988
-    iNotifyConfFile: /home/${SVCUSER}/control/AI_Config.json
-    gcodePath: ./gcode/
-    printerCategory: marlin
+touch /home/${SVCUSER}/control/piPrinterCtrl/piPrinterCtrl_Pi_Config.yml
+cat <<EOF > /home/${SVCUSER}/control/piPrinterCtrl/piPrinterCtrl_Pi_Config.yml
+forPiPort: 1118
+rmtPrinterCtrlAddr: tx-video.cloud3dprint.com
+gRPCPortForPrinterControler: 19988
+iNotifyConfFile: /home/${SVCUSER}/control/AI_Config.json
+gcodePath: ./gcode/
+printerCategory: marlin
 EOF
