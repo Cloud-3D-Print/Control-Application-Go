@@ -2,7 +2,7 @@
 
 ## The printer controller application in Raspberry Pi (Golang version), includes
 1. tpcpilocal - send video information from raspi to remote server
-2. pi printer controller - receive commands from Project Management Centre to controller 3D printers, and sync staatuses and attributes of devices
+2. pi printer controller - receive commands from Project Management Centre to control 3D printers, and sync staatuses and attributes of devices
 
 ## Required environment:
 1. Raspberry Pi or similar micro computer device
