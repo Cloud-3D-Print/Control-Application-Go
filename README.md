@@ -4,7 +4,7 @@
 1. tpcpilocal - send video information from raspi to remote server
 2. pi printer controller - receive commands from Project Management Centre to controller 3D printers, and sync staatuses and attributes of devices
 
-## required environment:
+## Required environment:
 1. Raspberry Pi or similar micro computer device
 2. (suggested) ARM5 or ARM6 or ARM7 or ARM64
 
