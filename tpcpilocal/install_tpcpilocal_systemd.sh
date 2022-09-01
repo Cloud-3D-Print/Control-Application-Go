@@ -31,8 +31,8 @@ SyslogIdentifier=${SVCNAME}
 WantedBy=multi-user.target
 EOF
 
-sudo systemctl stop webcamd.service # disable klipper webcam function
-sudo systemctl disable webcamd.service # disable klipper webcam function
+sudo systemctl stop webcamd.service >> /dev/null 2>&1 # disable klipper webcam function 
+sudo systemctl disable webcamd.service >> /dev/null 2>&1 # disable klipper webcam function
 
 sudo cp ./${SVCNAME}.service /etc/systemd/system/
 
