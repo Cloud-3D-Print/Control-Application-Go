@@ -31,13 +31,13 @@ SyslogIdentifier=${SVCNAME}
 WantedBy=multi-user.target
 EOF
 
-sudo systemctl stop webcamd.service >> /dev/null 2>&1 # disable klipper webcam function 
-sudo systemctl disable webcamd.service >> /dev/null 2>&1 # disable klipper webcam function
+sudo systemctl stop webcamd.service &>/dev/null || true # disable klipper webcam function 
+sudo systemctl disable webcamd.service &>/dev/null || true # disable klipper webcam function
 
 sudo cp ./${SVCNAME}.service /etc/systemd/system/
 
-sudo systemctl start ${SVCNAME} >> /dev/null 2>&1
-sudo systemctl enable ${SVCNAME} >> /dev/null 2>&1
+sudo systemctl start ${SVCNAME} &>/dev/null || true
+sudo systemctl enable ${SVCNAME} &>/dev/null || true
 
 sudo systemctl status ${SVCNAME}
 echo -e "You could use the following command to monitor the server:\njournalctl -n 100 -f -u ${SVCNAME}"
