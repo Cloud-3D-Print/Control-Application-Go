@@ -5,9 +5,9 @@ SVCNAME=tpcpilocal
 SVCUSER=$USER   ### could be changed to another user with service permissions
 WORKDIR="$HOME/control/tpcpilocal"
 
-sudo systemctl stop ${SVCNAME} >> /dev/null 2>&1
-sudo systemctl disable ${SVCNAME} >> /dev/null 2>&1
-sudo rm /etc/systemd/system/${SVCNAME}.service
+sudo systemctl stop ${SVCNAME} &>/dev/null || true
+sudo systemctl disable ${SVCNAME} &>/dev/null || true
+sudo rm /etc/systemd/system/${SVCNAME}.service &>/dev/null || true
 
 cat > ./${SVCNAME}.service <<EOF
 [Unit]

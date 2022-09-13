@@ -7,7 +7,7 @@ WORKDIR="$HOME/control/piPrinterCtrl"
 
 sudo systemctl stop ${SVCNAME} &>/dev/null || true
 sudo systemctl disable ${SVCNAME} &>/dev/null || true
-sudo rm /etc/systemd/system/${SVCNAME}.service
+sudo rm /etc/systemd/system/${SVCNAME}.service &>/dev/null || true
 
 cat > ${SVCNAME}.service <<EOF
 [Unit]
