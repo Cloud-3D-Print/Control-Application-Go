@@ -31,6 +31,16 @@ SyslogIdentifier=${SVCNAME}
 WantedBy=multi-user.target
 EOF
 
+touch /home/${SVCUSER}/control/tpcpilocal/tpcpi_localconfig.yml
+cat <<EOF > /home/${SVCUSER}/control/tpcpilocal/tpcpi_localconfig.yml
+### resolution support 360P, 480P, 720P, 1080P, 2K. default is 720P
+resolution: 720P
+gpuJPEGQualityRank: 8    ### 1~10
+localVidHttpPort: 9988
+gRPCPortForPrinterControler: 19988
+iNotifyConfFile: /home/${SVCUSER}/control/AI_Config.json
+EOF
+
 sudo systemctl stop webcamd.service &>/dev/null || true # disable klipper webcam function 
 sudo systemctl disable webcamd.service &>/dev/null || true # disable klipper webcam function
 
@@ -41,13 +51,3 @@ sudo systemctl enable ${SVCNAME} &>/dev/null || true
 
 sudo systemctl status ${SVCNAME}
 echo -e "You could use the following command to monitor the server:\njournalctl -n 100 -f -u ${SVCNAME}"
-
-touch /home/${SVCUSER}/control/tpcpilocal/tpcpi_localconfig.yml
-cat <<EOF > /home/${SVCUSER}/control/tpcpilocal/tpcpi_localconfig.yml
-### resolution support 360P, 480P, 720P, 1080P, 2K. default is 720P
-resolution: 720P
-gpuJPEGQualityRank: 8    ### 1~10
-localVidHttpPort: 9988
-gRPCPortForPrinterControler: 19988
-iNotifyConfFile: /home/${SVCUSER}/control/AI_Config.json
-EOF

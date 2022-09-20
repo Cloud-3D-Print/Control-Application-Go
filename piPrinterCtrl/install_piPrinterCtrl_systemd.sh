@@ -31,14 +31,6 @@ SyslogIdentifier=${SVCNAME}
 WantedBy=multi-user.target
 EOF
 
-sudo cp ./${SVCNAME}.service /etc/systemd/system/
-
-sudo systemctl start ${SVCNAME} &>/dev/null || true
-sudo systemctl enable ${SVCNAME} &>/dev/null || true
-
-sudo systemctl status ${SVCNAME}
-echo -e "You could use the following command to monitor the server:\njournalctl -n 100 -f -u ${SVCNAME}"
-
 touch /home/${SVCUSER}/control/piPrinterCtrl/piPrinterCtrl_Pi_Config.yml
 cat <<EOF > /home/${SVCUSER}/control/piPrinterCtrl/piPrinterCtrl_Pi_Config.yml
 forPiPort: 1118
@@ -48,3 +40,11 @@ iNotifyConfFile: /home/${SVCUSER}/control/AI_Config.json
 gcodePath: ./gcode/
 printerCategory: marlin
 EOF
+
+sudo cp ./${SVCNAME}.service /etc/systemd/system/
+
+sudo systemctl start ${SVCNAME} &>/dev/null || true
+sudo systemctl enable ${SVCNAME} &>/dev/null || true
+
+sudo systemctl status ${SVCNAME}
+echo -e "You could use the following command to monitor the server:\njournalctl -n 100 -f -u ${SVCNAME}"
