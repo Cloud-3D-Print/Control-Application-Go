@@ -19,3 +19,7 @@ chmod +x install.sh
 ```
 ./install.sh
 ```
+
+### P.S.
+1. the default pattern of pi printer controller is marlin, not klipper
+2. klipper service need to be deployed individually
