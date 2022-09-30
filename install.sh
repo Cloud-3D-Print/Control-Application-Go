@@ -21,7 +21,7 @@ sudo apt-get install git -y
 git clone https://github.com/mech-soluitons-ltd/Control-Application-Go.git /home/${SVCUSER}/control
 
 echo "Changing folder permissions"
-chown -R pi /home/pi/control
+chown -R ${SVCUSER} /home/${SVCUSER}/control
 
 echo "Installing pi printer controller service"
 chmod +x /home/${SVCUSER}/control/piPrinterCtrl/install_piPrinterCtrl_systemd.sh
