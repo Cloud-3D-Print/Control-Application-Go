@@ -9,8 +9,8 @@ then
   read -p "Do you want to reinstall? (y|n)" -n 1 -r
   if [[ $REPLY =~ ^[Yy]$ ]]
     then
-      # sudo rm -rf /home/${SVCUSER}/control
-      echo "Reinstalling Control Application"
+      sudo rm -rf /home/${SVCUSER}/control
+      # echo "Reinstalling Control Application"
     else
       exit 0
   fi
