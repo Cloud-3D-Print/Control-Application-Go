@@ -3,3 +3,6 @@ piPrinterCtrl/*.service
 tpcpilocal/*.service
 piPrinterCtrl/*.yml
 tpcpilocal/*.yml
+note.sh
+pre_install.sh
+control_app_rpi.tar.gz

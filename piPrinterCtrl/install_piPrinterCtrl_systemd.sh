@@ -7,11 +7,11 @@ WORKDIR="$HOME/control/piPrinterCtrl"
 
 sudo systemctl stop ${SVCNAME} &>/dev/null || true
 sudo systemctl disable ${SVCNAME} &>/dev/null || true
-sudo rm /etc/systemd/system/${SVCNAME}.service &>/dev/null || true
+# sudo rm /etc/systemd/system/${SVCNAME}.service &>/dev/null || true
 
 cat > ${SVCNAME}.service <<EOF
 [Unit]
-Description=TPCPI Remote Server
+Description=TPCPI Local Server
 After=network-online.target syslog.target
 
 [Service]
@@ -41,8 +41,10 @@ gcodePath: ./gcode/
 printerCategory: marlin
 EOF
 
-sudo cp ./${SVCNAME}.service /etc/systemd/system/
+# sudo cp ./${SVCNAME}.service /etc/systemd/system/
+sudo cp -r -f ./${SVCNAME}.service /etc/systemd/system/
 
+sudo systemctl daemon-reload ${SVCNAME} &>/dev/null || true
 sudo systemctl start ${SVCNAME} &>/dev/null || true
 sudo systemctl enable ${SVCNAME} &>/dev/null || true
 

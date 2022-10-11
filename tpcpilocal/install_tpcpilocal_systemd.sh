@@ -7,7 +7,7 @@ WORKDIR="$HOME/control/tpcpilocal"
 
 sudo systemctl stop ${SVCNAME} &>/dev/null || true
 sudo systemctl disable ${SVCNAME} &>/dev/null || true
-sudo rm /etc/systemd/system/${SVCNAME}.service &>/dev/null || true
+# sudo rm /etc/systemd/system/${SVCNAME}.service &>/dev/null || true
 
 cat > ./${SVCNAME}.service <<EOF
 [Unit]
@@ -44,8 +44,10 @@ EOF
 sudo systemctl stop webcamd.service &>/dev/null || true # disable klipper webcam function 
 sudo systemctl disable webcamd.service &>/dev/null || true # disable klipper webcam function
 
-sudo cp ./${SVCNAME}.service /etc/systemd/system/
+# sudo cp ./${SVCNAME}.service /etc/systemd/system/
+sudo cp -r -f ./${SVCNAME}.service /etc/systemd/system/
 
+sudo systemctl daemon-reload ${SVCNAME} &>/dev/null || true
 sudo systemctl start ${SVCNAME} &>/dev/null || true
 sudo systemctl enable ${SVCNAME} &>/dev/null || true
 

@@ -16,10 +16,16 @@ then
   fi
 fi
 
+# cd ~
+# make -p Downloads
+# cd Downloads
+
 echo "Installing Git"
 sudo apt-get install git -y
 
 git clone https://github.com/mech-soluitons-ltd/Control-Application-Go.git /home/${SVCUSER}/control
+
+
 
 echo "Changing folder permissions"
 chown -R ${SVCUSER} /home/${SVCUSER}/control
