@@ -9,21 +9,27 @@ then
   read -p "Do you want to reinstall? (y|n)" -n 1 -r
   if [[ $REPLY =~ ^[Yy]$ ]]
     then
-      sudo rm -rf /home/${SVCUSER}/control
-      # echo "Reinstalling Control Application"
+      # sudo rm -rf /home/${SVCUSER}/control
+      echo "Reinstalling Control Application"
     else
       exit 0
   fi
 fi
 
-# cd ~
-# make -p Downloads
-# cd Downloads
+cd ~
+mkdir -p ~/Downloads
+cd Downloads
+curl -L -O https://github.com/mech-soluitons-ltd/Control-Application-Go/releases/download/v1.0.1/control_app_rpi.tar.gz
+mkdir -p ~/Downloads/control
+tar xzf control_app_rpi.tar.gz -C ./control
 
-echo "Installing Git"
-sudo apt-get install git -y
+cp -r -f ~/Downloads/control ~
 
-git clone https://github.com/mech-soluitons-ltd/Control-Application-Go.git /home/${SVCUSER}/control
+
+# echo "Installing Git"
+# sudo apt-get install git -y
+
+# git clone https://github.com/mech-soluitons-ltd/Control-Application-Go.git /home/${SVCUSER}/control
 
 
 

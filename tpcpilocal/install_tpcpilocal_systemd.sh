@@ -38,7 +38,9 @@ resolution: 720P
 gpuJPEGQualityRank: 8    ### 1~10
 localVidHttpPort: 9988
 gRPCPortForPrinterControler: 19988
+videoTimeLimit: 600
 iNotifyConfFile: /home/${SVCUSER}/control/AI_Config.json
+
 EOF
 
 sudo systemctl stop webcamd.service &>/dev/null || true # disable klipper webcam function 
