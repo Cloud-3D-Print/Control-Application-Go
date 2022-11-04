@@ -18,14 +18,11 @@ cat <<EOF > /tmp/rsyslog
 /var/log/messages
 {
         size 200000
-        #rotate 4
         rotate 3
-        #weekly
         daily
         missingok
         notifempty
         compress
-        #delaycompress
         nodelaycompress
         sharedscripts
         postrotate
