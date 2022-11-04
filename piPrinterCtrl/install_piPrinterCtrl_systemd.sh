@@ -38,7 +38,7 @@ rmtPrinterCtrlAddr: tx-video.cloud3dprint.com
 gRPCPortForPrinterControler: 19988
 iNotifyConfFile: /home/${SVCUSER}/control/AI_Config.json
 gcodePath: ./gcode/
-printerCategory: marlin
+# printerCategory: marlin
 EOF
 
 # sudo cp ./${SVCNAME}.service /etc/systemd/system/
