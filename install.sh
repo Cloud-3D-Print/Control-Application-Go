@@ -42,3 +42,10 @@ chmod +x /home/${SVCUSER}/control/tpcpilocal/install_tpcpilocal_systemd.sh
 chmod +x /home/${SVCUSER}/control/tpcpilocal/tpcpilocal
 cd /home/${SVCUSER}/control/tpcpilocal/
 ./install_tpcpilocal_systemd.sh &>/dev/null || true
+
+echo "System log setup"
+chmod +x /home/${SVCUSER}/control/syslogprep.sh
+cd /home/${SVCUSER}/control
+./syslogprep.sh &>/dev/null || true
+
+cd /home/${SVCUSER}
