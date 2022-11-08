@@ -43,7 +43,7 @@ chmod +x /home/${SVCUSER}/control/tpcpilocal/tpcpilocal
 cd /home/${SVCUSER}/control/tpcpilocal/
 ./install_tpcpilocal_systemd.sh &>/dev/null || true
 
-echo "System log setup"
+echo "System log rotate setup"
 chmod +x /home/${SVCUSER}/control/syslogprep.sh
 cd /home/${SVCUSER}/control
 ./syslogprep.sh &>/dev/null || true
