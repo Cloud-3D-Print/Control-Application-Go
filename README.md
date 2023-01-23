@@ -9,15 +9,16 @@
 2. (suggested) ARM5 or ARM6 or ARM7 or ARM64
 
 ## How to install: 
-1. copy install.sh into /home/{$USER}/ of raspi
-2. make the install script to be executable 
+1. copy install_marlin.sh or install_klipper.sh into /home/{$USER}/ of raspi
+    * depends on printer firmware
+2. make the install script (install_marlin.sh or install_klipper.sh) to be executable 
 ```
-chmod +x install.sh
+chmod +x {install_script}
 ```
 3. make sure you have stable network connection
 4. run by 
 ```
-./install.sh
+./{install_script}
 ```
 
 ### P.S.

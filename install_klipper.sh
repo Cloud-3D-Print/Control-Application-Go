@@ -31,7 +31,7 @@ echo "Changing folder permissions"
 chown -R ${SVCUSER} /home/${SVCUSER}/control
 
 echo "Installing pi printer controller service"
-chmod +x /home/${SVCUSER}/control/piPrinterCtrl/install_piPrinterCtrl_systemd.sh
+chmod +x /home/${SVCUSER}/control/piPrinterCtrl/install_piPrinterCtrl_systemd_klipper.sh
 chmod +x /home/${SVCUSER}/control/piPrinterCtrl/piPrinterCtrl
 cd /home/${SVCUSER}/control/piPrinterCtrl/
 ./install_piPrinterCtrl_systemd.sh &>/dev/null || true
