@@ -10,7 +10,7 @@
 
 ## How to install: 
 1. copy install_marlin.sh or install_klipper.sh into /home/{$USER}/ of raspi
-    * depends on printer firmware
+    * depends on your 3D printer firmware
 2. make the install script (install_marlin.sh or install_klipper.sh) to be executable 
 ```
 chmod +x {install_script}
