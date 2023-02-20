@@ -34,7 +34,6 @@ EOF
 
 sudo mv -f /tmp/rsyslog /etc/logrotate.d/rsyslog
 sudo chown -R root:root /etc/logrotate.d/rsyslog
-sudo rm /tmp/rsyslog
 
 sudo systemctl restart logrotate.service &>/dev/null || true
 sudo systemctl restart logrotate.timer &>/dev/null || true
