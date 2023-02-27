@@ -9,14 +9,19 @@
 2. (suggested) ARM5 or ARM6 or ARM7 or ARM64
 
 ## How to install: 
-1. copy install_marlin.sh or install_klipper.sh into /home/{$USER}/ of raspi
+1.
+```
+sudo apt-get update
+sudo apt-get upgrade
+```
+2. copy install_marlin.sh or install_klipper.sh into /home/{$USER}/ of raspi
     * depends on your 3D printer firmware
-2. make the install script (install_marlin.sh or install_klipper.sh) to be executable 
+3. make the install script (install_marlin.sh or install_klipper.sh) to be executable 
 ```
 chmod +x {install_script}
 ```
-3. make sure you have stable network connection
-4. run by 
+4. make sure you have stable network connection
+5. run by 
 ```
 ./{install_script}
 ```
