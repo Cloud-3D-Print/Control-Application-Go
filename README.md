@@ -11,8 +11,7 @@
 ## How to install: 
 1.
 ```
-sudo apt-get update
-sudo apt-get upgrade
+sudo apt-get update && sudo apt-get upgrade -y
 ```
 2. copy install_marlin.sh or install_klipper.sh into /home/{$USER}/ of raspi
     * depends on your 3D printer firmware
